@@ -1,0 +1,91 @@
+/* General */
+.tipo-font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+/* Primer Bloque */
+.contenedor {
+    background-color: #4A90E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+.title-form {
+    font-size: 35px;
+    color: rgb(230, 207, 184);
+    text-align: center;
+}
+
+.img {
+    text-align: right;
+}
+
+.img img {
+    max-width: 150px;
+    max-height: 150px;
+    display: inline-block;
+    margin-left: auto;
+}
+
+/* Segundo Bloque */
+.contenedor-2 {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 50%; /* Ajusta el ancho de la tabla al 50% de la pantalla */
+    margin: 0 auto; /* Centra horizontalmente la tabla */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#mostrar-contrasena-favorita {
+    margin-top: 10px;
+}
+
+.content-form {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 20px;
+    background-color: #FFA500;
+    border-radius: 15px;
+    padding: 20px;
+    width: 75%;
+    text-align: center; /* Centra el contenido del formulario */
+}
+
+.form-control {
+    border-radius: 8px;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.contrasenas-table{
+    width: 100%;
+    text-align: center;
+}
+.contrasenas-table thead th {
+    font-size: 25px; /* Tamaño del texto del encabezado de la tabla */
+}
+
+.contrasenas-table thead .titulo1{
+    
+}
+
+.contrasenas-table td {
+    font-size: 16px; /* Tamaño del texto del cuerpo de la tabla */
+}
+
+

@@ -1,0 +1,88 @@
+/* General */
+.tipo-font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+/* Primer Bloque */
+.contenedor {
+    background-color: #4A90E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+
+
+.img {
+    text-align: right;
+}
+.img img {
+    max-width: 150px;
+    max-height: 150px;
+    display: inline-block;
+    margin-left: auto;
+}
+
+/* Segundo Bloque */
+.contenedor-2 {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+/* Formulario */
+.content-form {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 50px;
+    background-color: #FFA500;
+    border-radius: 15px;
+    padding: 45px;
+    width: 300px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 6px;
+    width: 92%;
+    padding: 7px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif; 
+    border-radius: 8px;
+    background-color: #F0F0F0;
+    border: 2px solid #4A90E2;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: rgb(249, 243, 220);
+}
+
+.olvido-contraseña {
+    color: blue;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.olvido-contraseña:hover {
+    text-decoration: underline;
+}
