@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Css/ContrasenaFavorita.css'; 
+import '../Css/ContrasenaFavorita.css';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
 
@@ -21,9 +21,9 @@ const ContrasenaFavorita = () => {
   return (
     <div>
       <Logo />
-      <div class="content-form">
-            <label for="contrasena-favorita" class="title-form">Generar nueva contraseña </label>
-            <Link to='/calcular' type="submit" class="btn" id="contrasena-favorita"> Generar</Link>
+      <div className="content-form">
+        <label htmlFor="contrasena-favorita" className="title-form">Generar nueva contraseña </label>
+        <Link to='/calcular' type="submit" className="btn" id="contrasena-favorita"> Generar</Link>
       </div>
       <div className="contenedor-2">
         <table className="contrasenas-table">
@@ -55,4 +55,5 @@ const ContrasenaFavorita = () => {
 };
 
 export default ContrasenaFavorita;
+
 
