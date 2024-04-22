@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../Css/InicioSesion.css';
 import { Link } from 'react-router-dom';
+import UserContext from '../Context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const FormularioIniciarSesion = () => {
-    const [usuario, setUsuario] = useState({
+    const [usuario, setDatosUsuario] = useState({
         correo: '',
         contrasena: '',
     });
+    const { setUser } = useContext(UserContext);
 
     const [error, setError] = useState(null);
 
+    const navigate = useNavigate();
+
     const handleChange = e => {
-        setUsuario({ ...usuario, [e.target.name]: e.target.value });
+        setDatosUsuario({ ...usuario, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
@@ -23,10 +28,13 @@ const FormularioIniciarSesion = () => {
             },
             body: JSON.stringify(usuario),
         })
-            .then((response) => {
-                if (response.ok) {
+            .then((response) => response.json())
+            .then((data) => {
+                if (data) {
                     console.log("Inicio de sesión exitoso");
-                    window.location.href = "/contrasena_favorita";
+                    setUser(data);
+                    console.log(data)
+                    navigate("/contrasena_favorita");
                 } else {
                     setError("El correo o la contraseña están incorrectos");
                 }
@@ -35,6 +43,7 @@ const FormularioIniciarSesion = () => {
                 console.error("Error al iniciar sesión:", error);
             });
     };
+
 
     return (
         <div className="contenedor-2">

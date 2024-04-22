@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../Css/ContrasenaFavorita.css';
 import Logo from './Logo';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import UserContext from '../Context/AuthContext';
 
 const ContrasenaFavorita = () => {
+  const navigate = useNavigate();
+
+  const { user } = useContext(UserContext);
+  console.log(user);
   // Simulación de contraseñas guardadas en el estado
   const [contrasenas, setContrasenas] = useState([]);
 
@@ -18,12 +23,20 @@ const ContrasenaFavorita = () => {
     setContrasenas(contrasenasGuardadas);
   }, []); // La dependencia vacía significa que este efecto se ejecuta solo una vez al montar el componente
 
+  const handleBack = () => {
+    navigate("/calcular");
+  };
+
+
   return (
     <div>
       <Logo />
+      <div className="nombre-usuario">
+        <p>Bienvenido: {user?.nombreUsuario}</p>
+      </div>
       <div className="content-form">
         <label htmlFor="contrasena-favorita" className="title-form">Generar nueva contraseña </label>
-        <Link to='/calcular' type="submit" className="btn" id="contrasena-favorita"> Generar</Link>
+        <button onClick={handleBack} className="btn">Generar</button>
       </div>
       <div className="contenedor-2">
         <table className="contrasenas-table">

@@ -7,24 +7,26 @@ import Registro from './Componentes/Registro.js';
 import OlvidoContrasena from './Componentes/OlvidoContrasena.js';
 import ContrasenaFavorita from './Componentes/ContrasenaFavorita.js';
 import GeneradorContrasena from './Componentes/GeneradorContrasenas.js';
+import UserContextProvider from './Context/UserContextProvider.jsx';
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<PaginaPrincipal/>} />
-          <Route path="/inicio_sesion" element={<InicioSesion />} />
-          <Route path="/registro" element={<Registro />} />
-          <Route path="/olvido_contrasena" element={<OlvidoContrasena/>}/>
-          <Route path="/contrasena_favorita" element={<ContrasenaFavorita/>}/>
-          <Route path="/calcular" element={<GeneradorContrasena/>}/>
-        </Routes>
-      </div>
-    </Router>
+    <UserContextProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<PaginaPrincipal />} />
+            <Route path="/registro" element={<Registro />} />
+            <Route path="/olvido_contrasena" element={<OlvidoContrasena />} />
+            <Route path="/inicio_sesion" element={<InicioSesion />} />
+            <Route path="/contrasena_favorita" element={<ContrasenaFavorita />} />
+            <Route path="/calcular" element={<GeneradorContrasena />} />
+          </Routes>
+        </div>
+      </Router>
+    </UserContextProvider>
   );
 };
-
 
 const PaginaPrincipal = () => {
   return (
@@ -34,4 +36,6 @@ const PaginaPrincipal = () => {
     </>
   );
 };
+
+
 export default App;

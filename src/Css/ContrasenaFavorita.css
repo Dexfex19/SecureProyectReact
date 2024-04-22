@@ -80,9 +80,13 @@ body {
     font-size: 25px; /* Tamaño del texto del encabezado de la tabla */
 }
 
-.contrasenas-table thead .titulo1{
-    
-}
+.nombre-usuario {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1em;
+  }
 
 .contrasenas-table td {
     font-size: 16px; /* Tamaño del texto del cuerpo de la tabla */
