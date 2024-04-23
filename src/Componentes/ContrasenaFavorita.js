@@ -6,27 +6,20 @@ import UserContext from '../Context/AuthContext';
 
 const ContrasenaFavorita = () => {
   const navigate = useNavigate();
-
   const { user } = useContext(UserContext);
-  console.log(user);
-  // Simulación de contraseñas guardadas en el estado
   const [contrasenas, setContrasenas] = useState([]);
 
   useEffect(() => {
-    // Aquí deberías hacer una llamada a tu base de datos para obtener las contraseñas del usuario actual
-    // Supongamos que las contraseñas se obtienen correctamente y se almacenan en un array llamado contrasenasGuardadas
-    const contrasenasGuardadas = [
-      { descripcion: 'Correo electrónico', contrasena: 'ejemplo123' },
-      { descripcion: 'Cuenta bancaria', contrasena: 'segura456' },
-      // Agrega más contraseñas según lo necesites
-    ];
-    setContrasenas(contrasenasGuardadas);
-  }, []); // La dependencia vacía significa que este efecto se ejecuta solo una vez al montar el componente
+    // Hacer una llamada a tu base de datos para obtener las contraseñas del usuario actual
+    fetch(`http://localhost:8080/contrasena/usuario/${user.id}`)
+      .then(response => response.json())
+      .then(data => setContrasenas(data))
+      .catch(error => console.error('Hubo un error al obtener las contraseñas: ', error));
+  }, [user.id]); // Dependencia en el idUsuario para que se actualice cuando cambie
 
   const handleBack = () => {
     navigate("/calcular");
   };
-
 
   return (
     <div>
@@ -57,7 +50,7 @@ const ContrasenaFavorita = () => {
             {contrasenas.map((contrasena, index) => (
               <tr key={index}>
                 <td>{contrasena.descripcion}</td>
-                <td>{contrasena.contrasena}</td>
+                <td>{contrasena.contenido}</td>
               </tr>
             ))}
           </tbody>

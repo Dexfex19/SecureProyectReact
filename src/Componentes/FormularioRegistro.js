@@ -4,7 +4,6 @@ import '../Css/Registro.css'
 
 const FormularioRegistro = () => {
   const [usuario, setUsuario] = useState({
-    id: 1,
     nombre: '',
     apellido: '',
     correo: '',

@@ -21,6 +21,7 @@ const App = () => {
             <Route path="/inicio_sesion" element={<InicioSesion />} />
             <Route path="/contrasena_favorita" element={<ContrasenaFavorita />} />
             <Route path="/calcular" element={<GeneradorContrasena />} />
+
           </Routes>
         </div>
       </Router>
