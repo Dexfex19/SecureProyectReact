@@ -7,11 +7,11 @@ const BotonesInicio = () => {
   return (
     <div className="contenedor">
       <div className="img">
-      <img src="/Imagenes/Logo.png" alt="Logo" />
+        <img src="/Imagenes/Logo.png" alt="Logo" />
       </div>
       <div className="bloque-botones">
-        <Link to="/inicio_sesion" className="button tipo-font">Iniciar sesión</Link>
-        <Link to="/registro" className="button tipo-font">Registrarse</Link>
+        <Link to="/inicio_sesion" id="InicioSesion" className="button tipo-font">Iniciar sesión</Link>
+        <Link to="/registro" id="Registro" className="button tipo-font">Registrarse</Link>
       </div>
     </div>
   );

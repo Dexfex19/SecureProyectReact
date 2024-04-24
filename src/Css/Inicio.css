@@ -40,6 +40,7 @@ body{
 }
 .img {
     text-align: right;
+    margin-right: 20px;
 }
 .img img {
     max-width: 150px;

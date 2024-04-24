@@ -59,10 +59,13 @@ const FormularioGeneradorContrasenas = () => {
                 contenido: contrasenaGenerada
             }),
         })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Contraseña guardada exitosamente");
-                navigate("/contrasena_favorita");
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Contraseña guardada exitosamente");
+                    navigate("/contrasena_favorita");
+                } else {
+                    console.error("Error al guardar contraseña:", response.status)
+                }
             })
             .catch((error) => {
                 console.error("Error al guardar contraseña:", error);
@@ -83,26 +86,26 @@ const FormularioGeneradorContrasenas = () => {
                 </div>
 
                 <div className="form-group p-2">
-                    <label>Opciones:</label>
+                    <label>Especificaciones de la contraseña:</label>
                     <div className="form-check">
                         <input type="checkbox" id="opcion-mayusculas" onChange={(e) => setIncluirMayusculas(e.target.checked)} />
-                        <label htmlFor="opcion-mayusculas">Mayúsculas</label>
+                        <label htmlFor="opcion-mayusculas">Al menos una mayúscula</label>
                     </div>
                     <div className="form-check">
                         <input type="checkbox" id="opcion-minusculas" onChange={(e) => setIncluirMinusculas(e.target.checked)} />
-                        <label htmlFor="opcion-minusculas">Minúsculas</label>
+                        <label htmlFor="opcion-minusculas">Al menos una minúscula</label>
                     </div>
                     <div className="form-check">
                         <input type="checkbox" id="opcion-numeros" onChange={(e) => setIncluirNumeros(e.target.checked)} />
-                        <label htmlFor="opcion-numeros">Números</label>
+                        <label htmlFor="opcion-numeros">Al menos un número</label>
                     </div>
                     <div className="form-check">
                         <input type="checkbox" id="opcion-especiales" onChange={(e) => setIncluirSimbolos(e.target.checked)} />
-                        <label htmlFor="opcion-especiales">Caracteres Especiales</label>
+                        <label htmlFor="opcion-especiales">Al menos un caracter especial</label>
                     </div>
                 </div>
                 <div className="form-group p-2">
-                    <label htmlFor="longitud-contrasena">Longitud de Contraseña</label>
+                    <label htmlFor="longitud-contrasena">Longitud de la contraseña</label>
                     <input type="number" className="form-control" id="longitud-contrasena" name="longitud-contrasena" placeholder="Longitud" min="1" value={longitud} onChange={(e) => setLongitud(e.target.value)} required />
                 </div>
 

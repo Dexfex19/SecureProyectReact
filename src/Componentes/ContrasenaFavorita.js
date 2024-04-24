@@ -21,6 +21,17 @@ const ContrasenaFavorita = () => {
     navigate("/calcular");
   };
 
+  const handleBorrar = (idContrasena) => {
+    fetch(`http://localhost:8080/contrasena/${idContrasena}`, {
+      method: 'DELETE',
+    })
+      .then(() => {
+        // Actualiza la lista de contraseñas después de borrar una
+        setContrasenas(contrasenas.filter(contrasena => contrasena.id !== idContrasena));
+      })
+      .catch(error => console.error('Hubo un error al borrar la contraseña: ', error));
+  };
+
   return (
     <div>
       <Logo />
@@ -35,7 +46,7 @@ const ContrasenaFavorita = () => {
         <table className="contrasenas-table">
           <thead id='titulo1'>
             <tr>
-              <th>
+              <th colSpan={3}>
                 Lista de mis contraseñas
               </th>
             </tr>
@@ -44,6 +55,7 @@ const ContrasenaFavorita = () => {
             <tr>
               <th>Descripción</th>
               <th>Contraseña</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
@@ -51,6 +63,7 @@ const ContrasenaFavorita = () => {
               <tr key={index}>
                 <td>{contrasena.descripcion}</td>
                 <td>{contrasena.contenido}</td>
+                <td><button onClick={() => handleBorrar(contrasena.id)} id="boton-borrar">Borrar</button></td>
               </tr>
             ))}
           </tbody>

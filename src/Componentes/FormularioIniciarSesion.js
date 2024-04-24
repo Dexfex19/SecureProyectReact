@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import '../Css/InicioSesion.css';
-import { Link } from 'react-router-dom';
 import UserContext from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -54,10 +53,6 @@ const FormularioIniciarSesion = () => {
 
                 <div className="form-group">
                     <input type="password" className="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" autoComplete="off" required onChange={handleChange} />
-                </div>
-
-                <div className="form-group">
-                    <Link to="/olvido_contrasena" className="olvido-contraseña">¿Olvidaste tu contraseña?</Link>
                 </div>
 
                 {error && <p>{error}</p>}

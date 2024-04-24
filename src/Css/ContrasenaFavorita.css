@@ -41,7 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    width: 50%; /* Ajusta el ancho de la tabla al 50% de la pantalla */
+    width: 75%; /* Ajusta el ancho de la tabla al 50% de la pantalla */
     margin: 0 auto; /* Centra horizontalmente la tabla */
 }
 
@@ -75,6 +75,8 @@ body {
 .contrasenas-table{
     width: 100%;
     text-align: center;
+    font-family: 'Courier New', monospace;
+    background-color: #bbe4ff;
 }
 .contrasenas-table thead th {
     font-size: 25px; /* Tamaño del texto del encabezado de la tabla */
@@ -86,10 +88,46 @@ body {
     font-weight: bold;
     color: #333;
     margin-bottom: 1em;
+    font-family: 'Montserrat', sans-serif;
   }
+
+
+#titulo2 th:nth-child(-n+2) {
+    width: 40%; /* Las primeras dos columnas abarcan el 40% de la tabla */
+}
+
+#titulo2 th:nth-child(3) {
+    width: 20%; /* La tercera columna abarca el 20% de la tabla */
+}
+
+#titulo1 th {
+    font-size: 25px; /* Ajusta el tamaño del texto */
+    padding: 20px 0; /* Aumenta el espacio alrededor del texto */
+    background-color: white;
+    border: #ffffff;
+}
+#titulo2 th {
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    padding: 10px 0; /* Aumenta el espacio alrededor del texto */
+    background-color: white;
+    border: #ffffff;
+}
 
 .contrasenas-table td {
     font-size: 16px; /* Tamaño del texto del cuerpo de la tabla */
 }
 
+.contrasenas-table td, .contrasenas-table th {
+    border: 1px solid #000000; /* Líneas de color naranja oscuro */
+}
+
+.contrasenas-table body td, .contrasenas-table body th{
+    border: 1px solid #000000; /* Líneas de color naranja oscuro */
+}
+
+#boton-borrar {
+    background-color: rgb(236, 128, 78);
+    color: black;
+    font-family: 'Courier New', monospace;
+}
 

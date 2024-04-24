@@ -4,7 +4,6 @@ import BotonesInicio from './Componentes/BotonesInicio.js';
 import Proposito from './Componentes/Proposito.js';
 import InicioSesion from './Componentes/InicioSesion.js';
 import Registro from './Componentes/Registro.js';
-import OlvidoContrasena from './Componentes/OlvidoContrasena.js';
 import ContrasenaFavorita from './Componentes/ContrasenaFavorita.js';
 import GeneradorContrasena from './Componentes/GeneradorContrasenas.js';
 import UserContextProvider from './Context/UserContextProvider.jsx';
@@ -17,7 +16,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<PaginaPrincipal />} />
             <Route path="/registro" element={<Registro />} />
-            <Route path="/olvido_contrasena" element={<OlvidoContrasena />} />
             <Route path="/inicio_sesion" element={<InicioSesion />} />
             <Route path="/contrasena_favorita" element={<ContrasenaFavorita />} />
             <Route path="/calcular" element={<GeneradorContrasena />} />
