@@ -22,7 +22,7 @@ const FormularioGeneradorContrasenas = () => {
     };
 
     const handleGenerar = () => {
-        fetch("http://localhost:8080/contrasena/generar", {
+        fetch("secureapp.azurewebsites.net/contrasena/generar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const FormularioGeneradorContrasenas = () => {
 
     const handleGuardar = (e) => {
         e.preventDefault(); // Evitar la recarga de la página
-        fetch("http://localhost:8080/contrasena", {
+        fetch("secureapp.azurewebsites.net/contrasena", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

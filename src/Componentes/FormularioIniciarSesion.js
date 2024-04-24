@@ -20,7 +20,7 @@ const FormularioIniciarSesion = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:8080/usuario/iniciarSesion", {
+        fetch("secureapp.azurewebsites.net/usuario/iniciarSesion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
