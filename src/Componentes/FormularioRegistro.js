@@ -19,7 +19,7 @@ const FormularioRegistro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Evitar la recarga de la página
-    fetch("secureapp.azurewebsites.net/usuario", {
+    fetch("https://secureapp.azurewebsites.net/usuario", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

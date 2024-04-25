@@ -11,7 +11,7 @@ const ContrasenaFavorita = () => {
 
   useEffect(() => {
     // Hacer una llamada a tu base de datos para obtener las contraseñas del usuario actual
-    fetch(`secureapp.azurewebsites.net/contrasena/usuario/${user.id}`)
+    fetch(`https://secureapp.azurewebsites.net/contrasena/usuario/${user.id}`)
       .then(response => response.json())
       .then(data => setContrasenas(data))
       .catch(error => console.error('Hubo un error al obtener las contraseñas: ', error));
@@ -22,7 +22,7 @@ const ContrasenaFavorita = () => {
   };
 
   const handleBorrar = (idContrasena) => {
-    fetch(`secureapp.azurewebsites.net/contrasena/${idContrasena}`, {
+    fetch(`https://secureapp.azurewebsites.net/contrasena/${idContrasena}`, {
       method: 'DELETE',
     })
       .then(() => {
